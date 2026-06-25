@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        
+
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="categories" element={<Categories />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="order-history" element={<OrderHistory />} />
-          
+
           {/* Admin Routes */}
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="admin/products" element={<AdminProducts />} />
