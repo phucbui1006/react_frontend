@@ -49,7 +49,7 @@ export default function AdminProducts() {
                         <tr key={product.id} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '15px', fontWeight: 'bold' }}>{product.id}</td>
                             <td>
-                                <img src={`/assets/images/${product.image}`} alt={product.name} style={{ width: '50px', height: '50px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/50'} />
+                                <img src={`/assets/images/products/${product.image}`} alt={product.name} style={{ width: '50px', height: '50px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/50'} />
                             </td>
                             <td style={{ maxWidth: '300px', fontWeight: '500' }}>{product.name}</td>
                             <td style={{ color: '#e53e3e', fontWeight: 'bold' }}>{product.price.toLocaleString('vi-VN')}đ</td>

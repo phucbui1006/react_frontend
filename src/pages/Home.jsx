@@ -23,6 +23,18 @@ export default function Home() {
         fetchData();
     }, []);
 
+    const handleAddToCart = (product) => {
+        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = storedCart.find(item => item.id === product.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            storedCart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(storedCart));
+        alert('Đã thêm sản phẩm vào giỏ hàng!');
+    };
+
     return (
         <main className="page-shell">
             <aside className="sidebar">
@@ -85,7 +97,7 @@ export default function Home() {
                     {products.length > 0 ? products.map(product => (
                         <article className="product-card" key={product.id}>
                             <figure>
-                                <img src={`/assets/images/${product.image}`} alt={product.name} onError={(e) => { e.target.src = 'https://via.placeholder.com/200'; }} />
+                                <img src={`/assets/images/products/${product.image}`} alt={product.name} onError={(e) => { e.target.src = 'https://via.placeholder.com/200'; }} />
                             </figure>
                             <h3>{product.name}</h3>
                             <strong>{product.price.toLocaleString('vi-VN')}đ</strong>
@@ -94,7 +106,7 @@ export default function Home() {
                             </p>
                             <div className="product-actions">
                                 <Link className="detail-btn" to={`/product-detail/${product.id}`}>Xem chi tiết</Link>
-                                <button className="cart-btn" disabled={product.stock <= 0}>
+                                <button className="cart-btn" disabled={product.stock <= 0} onClick={() => handleAddToCart(product)}>
                                     <i className="fa-solid fa-cart-shopping"></i>
                                 </button>
                             </div>

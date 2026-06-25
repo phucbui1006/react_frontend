@@ -55,7 +55,7 @@ export default function Cart() {
                             {cart.map(item => (
                                 <tr key={item.id} style={{ borderBottom: '1px solid #eee' }}>
                                     <td style={{ padding: '15px 10px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                        <img src={`/assets/images/${item.image}`} alt={item.name} style={{ width: '60px', height: '60px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/60'} />
+                                        <img src={`/assets/images/products/${item.image}`} alt={item.name} style={{ width: '60px', height: '60px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/60'} />
                                         <Link to={`/product-detail/${item.id}`} style={{ textDecoration: 'none', color: '#333', fontWeight: '500' }}>{item.name}</Link>
                                     </td>
                                     <td>{item.price.toLocaleString('vi-VN')}đ</td>

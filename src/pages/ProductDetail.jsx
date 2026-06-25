@@ -38,8 +38,8 @@ export default function ProductDetail() {
     return (
         <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', minHeight: '60vh' }}>
             <div style={{ display: 'flex', gap: '50px', backgroundColor: '#fff', padding: '30px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-                <div style={{ flex: 1, textAlign: 'center' }}>
-                    <img src={`/assets/images/${product.image}`} alt={product.name} style={{ width: '100%', maxWidth: '400px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/400'} />
+                <div style={{ flex: 1, backgroundColor: '#fff', padding: '20px', borderRadius: '10px', display: 'flex', justifyContent: 'center' }}>
+                    <img src={`/assets/images/products/${product.image}`} alt={product.name} style={{ width: '100%', maxWidth: '400px', objectFit: 'contain' }} onError={(e) => e.target.src='https://via.placeholder.com/400'} />
                 </div>
                 <div style={{ flex: 1 }}>
                     <h2 style={{ fontSize: '28px', marginBottom: '15px' }}>{product.name}</h2>
